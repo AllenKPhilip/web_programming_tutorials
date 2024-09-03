@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial 5c</title>
+</head>
+<body>
+    <script>
+        function calculate(hours, rate) 
+        {
+            const regularHours = Math.min(hours, 40);
+            const overtimeHours = Math.max(hours - 40, 0);
+            return (regularHours * rate) + (overtimeHours * rate * 1.5);
+        }
+        const results = document.getElementById('results');
+        for (let i = 1; i <= 3; i++) 
+        {
+            const name = prompt(`Enter the name for employee ${i}:`);
+            const hours = parseFloat(prompt(`Enter the hours worked for ${name}:`));
+            const rate = parseFloat(prompt(`Enter the hourly rate for ${name}:`));
+            const grossPay = calculate(hours, rate);
+            document.writeln(`Gross Pay of ${name} is : $${grossPay.toFixed(2)}<br/>`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial 5b</title>
+</head>
+<body>
+    <script>
+        let input;
+        let continueChecking = true;
+        while(continueChecking) 
+        {
+            input = prompt("Enter a five-digit integer : ");
+            if(input === null) 
+            {
+                document.writeln("No input Given ");
+                continueChecking = false;
+            } 
+            else
+            {
+                const num = parseInt(input);
+                if(!num || num < 10000 || num > 99999) 
+                {
+                    alert("Entered integer is not a five-digit integer");
+                } 
+                else 
+                {
+                    let originalnum = num;
+                    let reversednum = 0;
+                    let temp = num;
+                    while (temp > 0) 
+                    {
+                        let digit = temp%10;
+                        reversednum = reversednum*10 + digit;
+                        temp = Math.floor(temp/10);
+                    }
+                    if (originalnum === reversednum) 
+                    {
+                        document.writeln(num+" is a Palindrome Number");
+                    } 
+                    else 
+                    {
+                        document.writeln(num+" is not a Palindrome Number");
+                    }
+                    continueChecking = false;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

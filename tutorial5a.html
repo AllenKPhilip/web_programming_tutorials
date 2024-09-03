@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial 5a</title>
+</head>
+<body>
+    <script>
+        var num = window.prompt("Enter the number : ", '');
+        num = Number(num)
+        if(!num)
+        {
+            window.alert("No Value entered");
+        }
+        else if(num < 0)
+        {
+            window.alert("Enter a Positive number ");
+        }
+        else
+        {
+            var fact = 1;
+            for(let i = 1; i <= num; i++)
+            {
+                fact = fact * i;
+            }
+            window.alert("Factorial of "+num+" is : " + fact);
+        }
+    </script>
+</body>
+</html>
